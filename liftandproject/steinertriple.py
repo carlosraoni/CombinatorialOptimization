@@ -6,7 +6,7 @@ from liftandprojectcuts import generate_lift_and_project_cuts,\
     lift_and_project_cutting_plane_loop
 import time
 
-__MAX_ITER = 100 # Max number of iterations for the cutting plane algorithm
+__MAX_ITER = 300 # Max number of iterations for the cutting plane algorithm
 
 # method to read instance files
 def read_instance(file_path):
@@ -64,6 +64,7 @@ print
 
 solution = master_prob.solution
 print "\tCpx Objective value: " , solution.get_objective_value()
+master_prob.write('./output/steiner_triple_master.lp')
     
 x_values = solution.get_values(x)
 print "\tSolution: ", x_values
